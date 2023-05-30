@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 import { Providers } from './providers';
 
-import Navbar from '.././components/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 
 export const metadata = {
   title: 'Create Next App',
