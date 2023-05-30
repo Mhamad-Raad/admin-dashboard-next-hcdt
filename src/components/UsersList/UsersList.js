@@ -1,3 +1,5 @@
+'use client';
+import { useEffect } from 'react';
 import UserItem from './UsersItem';
 
 import css from './UsersList.module.css';
@@ -27,6 +29,20 @@ const DUMMY = [
 ];
 
 export default function UsersList() {
+  useEffect(async () => {
+    const data = await fetch('https://reqres.in/api/users?page=2')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        console.log('here');
+        return data
+      })
+      .catch(() => console.log('error'));
+
+    console.log(data);
+  }, []);
+
+  console.log('here');
   return (
     <table className={css.users_table}>
       <thead>
@@ -41,9 +57,9 @@ export default function UsersList() {
         </tr>
       </thead>
       <tbody>
-        {
-          DUMMY.map(user => <UserItem user={user} /> )
-        }
+        {DUMMY.map((user) => (
+          <UserItem user={user} key={user.id} />
+        ))}
       </tbody>
     </table>
   );
