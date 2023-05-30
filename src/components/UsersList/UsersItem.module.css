@@ -1,0 +1,9 @@
+.users_table td {
+  text-align: center;
+  padding: 10px 8px;
+}
+
+.table_checkbox {
+  width: 15px;
+  height: 15px;
+}
