@@ -37,7 +37,7 @@ export default function UsersList() {
           <th>Email</th>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Actions</th>
+          <th className={css.table_actions_header}>Actions</th>
         </tr>
       </thead>
       <tbody>

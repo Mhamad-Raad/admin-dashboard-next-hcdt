@@ -8,9 +8,15 @@
   background: #F9FAFA;
 }
 
+.table_actions_header {
+  text-align: left !important;
+  padding-inline: 59.94px !important;
+}
+
 .users_table td,
 .users_table th {
   border: 1px solid #ddd;
-  padding: 10px 8px;
+  padding: 14px 17.94px; 
   text-align: center;
+  white-space: nowrap;
 }

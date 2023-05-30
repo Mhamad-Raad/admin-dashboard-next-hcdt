@@ -22,3 +22,35 @@
   height: 100%;
   width: 100%;
 }
+
+.table_actions_bg {
+  white-space: normal;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.table_actions {
+  display: flex;
+  gap: 25px;
+  height: 100%;
+  width: 100%;
+  padding-inline: 43px !important;
+}
+
+.table_delete_action {
+  color: #ff5555;
+}
+
+.table_edit_action {
+  color: #2f80ed;
+}
+
+.table_eye_action {
+  color: #6F6F6F;
+}
+
+.table_edit_action,
+.table_delete_action,
+.table_eye_action {
+  font-size: 16.7px;
+}
