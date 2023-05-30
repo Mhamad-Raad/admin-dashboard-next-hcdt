@@ -21,6 +21,11 @@
   color: white;
 }
 
+.header_button_plus {
+  font-size: 32px !important;
+  margin-top: -5px;
+}
+
 .header_button > span {
   font-size: 16px;
   line-height: 22px;

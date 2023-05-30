@@ -11,7 +11,7 @@ export default function HomeHeader() {
         <p className={css.home_description}>Create, Update, Delete Users</p>
       </div>
       <button type='button' className={css.header_button}>
-        <span>
+        <span className={css.header_button_plus}>
           +
         </span>
         <span>
