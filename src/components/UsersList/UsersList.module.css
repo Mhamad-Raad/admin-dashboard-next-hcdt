@@ -11,5 +11,6 @@
 .users_table td,
 .users_table th {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 10px 8px;
+  text-align: center;
 }

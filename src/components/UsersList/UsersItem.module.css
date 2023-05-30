@@ -1,9 +1,24 @@
-.users_table td {
-  text-align: center;
-  padding: 10px 8px;
-}
-
 .table_checkbox {
   width: 15px;
   height: 15px;
+}
+
+.table_img_data {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.table_img_bg {
+  width: 54.62px;
+  height: 35.12px;
+  padding: 10.81px 19.04px;
+  margin: 0;
+  background: #F9FAFA;
+  border-radius: 2px;
+}
+
+.table_user_avatar {
+  height: 100%;
+  width: 100%;
 }

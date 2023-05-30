@@ -8,8 +8,10 @@ export default function UsersItem({ user }) {
         <input type='checkbox' className={css.table_checkbox} />
       </td>
       <td>{user.id}</td>
-      <td>
-        <img src={user.avatar} alt="user's avatar" />
+      <td className={css.table_img_data}>
+        <div className={css.table_img_bg}>
+        <img src={user.avatar} alt="user's avatar" className={css.table_user_avatar} />
+          </div>
       </td>
       <td>{user.email}</td>
       <td>{user.firstName}</td>
