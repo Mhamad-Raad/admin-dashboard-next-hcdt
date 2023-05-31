@@ -10,8 +10,6 @@ export default function UsersItem({ user, onDelete }) {
   const userSlice = useSelector((state) => state.UsersSlice);
   const dispatch = useDispatch();
 
-  console.log(userSlice);
-
    const handleChange = (event) => {
      if (event.target.checked) {
         dispatch(addUser(user));

@@ -14,8 +14,6 @@ export const UsersSlice = createSlice({
       state.push(action.payload);
     },
     deleteUser: (state, action) => {
-      console.log(action.payload);
-      console.log('here');
       const index = state.findIndex((user) => user.id === action.payload);
       state.splice(index, 1);
     },
