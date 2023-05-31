@@ -1,24 +1,23 @@
-'use client';import useSWR from 'swr';
+'use client';
+import { useState } from 'react';
 
 import UserItem from './UsersItem';
-import Loading from '../Loading/Loading';
 import Toast from '../Toast/Toast';
 
 import css from './UsersList.module.css';
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-export default function UsersList() {
-  const { data, error, isLoading } = useSWR(
-    'https://reqres.in/api/users',
-    fetcher
-  );
+export default function UsersList({usersData}) {
 
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <Loading />;
+  const [users, setUsers] = useState(usersData)
 
-  console.log(data);
-  const { data: users } = data;
+  const deleteUser = (id) => {
+    const tempUsers = users;
+    const newUsers = tempUsers.filter((user)=>user.id !== id );
+    setUsers(newUsers);
+  }
+
+  console.log(users)
 
   return (
     <table className={css.users_table}>
@@ -35,7 +34,7 @@ export default function UsersList() {
       </thead>
       <tbody>
         {users.map((user) => (
-          <UserItem user={user} key={user.id} />
+          <UserItem user={user} key={user.id} onDelete={deleteUser} />
         ))}
       </tbody>
     </table>
