@@ -1,0 +1,15 @@
+.header_profile_avatar {
+  border-radius: 50%;
+  height: 38.46px;
+  width: 38.46px;
+}
+
+.header_profile_name,
+.header_profile_email {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin-left: 14.54px;
+}
