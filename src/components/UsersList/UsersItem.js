@@ -16,8 +16,8 @@ export default function UsersItem({ user }) {
           </div>
       </td>
       <td>{user.email}</td>
-      <td>{user.firstName}</td>
-      <td>{user.lastName}</td>
+      <td>{user.first_name}</td>
+      <td>{user.last_name}</td>
       <td className={css.table_actions_bg}>
         <div className={css.table_actions}>
 

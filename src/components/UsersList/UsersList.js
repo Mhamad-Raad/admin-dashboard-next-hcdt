@@ -1,48 +1,24 @@
 'use client';
 import { useEffect } from 'react';
+import useSWR from 'swr';
 import UserItem from './UsersItem';
 
 import css from './UsersList.module.css';
 
-const DUMMY = [
-  {
-    id: 1,
-    avatar: 'https://picsum.photos/100',
-    email: 'hama@gmail.com',
-    firstName: 'Mhamad',
-    lastName: 'Raad',
-  },
-  {
-    id: 2,
-    avatar: 'https://picsum.photos/200',
-    email: 'Ali@gmail.com',
-    firstName: 'Ali',
-    lastName: 'AbdulAmeer',
-  },
-  {
-    id: 3,
-    avatar: 'https://picsum.photos/300',
-    email: 'Renwar@gmail.com',
-    firstName: 'Renwar',
-    lastName: 'Bakhtyar',
-  },
-];
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function UsersList() {
-  useEffect(async () => {
-    const data = await fetch('https://reqres.in/api/users?page=2')
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        console.log('here');
-        return data
-      })
-      .catch(() => console.log('error'));
+  const { data, error, isLoading } = useSWR(
+    'https://reqres.in/api/users',
+    fetcher
+  );
 
-    console.log(data);
-  }, []);
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
-  console.log('here');
+  console.log(data);
+  const { data: users } = data;
+
   return (
     <table className={css.users_table}>
       <thead>
@@ -57,7 +33,7 @@ export default function UsersList() {
         </tr>
       </thead>
       <tbody>
-        {DUMMY.map((user) => (
+        {users.map((user) => (
           <UserItem user={user} key={user.id} />
         ))}
       </tbody>
