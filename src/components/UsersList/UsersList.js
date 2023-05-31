@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useToast } from '@chakra-ui/react';
 
 import UserItem from './UsersItem';
 import Toast from '../Toast/Toast';
@@ -8,13 +9,20 @@ import css from './UsersList.module.css';
 
 
 export default function UsersList({usersData}) {
-
   const [users, setUsers] = useState(usersData)
+  const toast = useToast();
 
   const deleteUser = (id) => {
     const tempUsers = users;
     const newUsers = tempUsers.filter((user)=>user.id !== id );
     setUsers(newUsers);
+    toast({
+          title: 'Account created.',
+          description: "We've created your account for you.",
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        })
   }
 
   console.log(users)
