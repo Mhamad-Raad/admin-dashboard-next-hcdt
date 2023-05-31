@@ -1,13 +1,12 @@
 import css from './UsersItem.module.css';
 import { AiFillDelete, AiFillEye } from 'react-icons/ai';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addUser, deleteUser } from '../../store/UserSlice';
 import { LuEdit } from 'react-icons/lu';
 
 export default function UsersItem({ user, onDelete }) {
   const deleteHandler = () => onDelete(user.id);
 
-  const userSlice = useSelector((state) => state.UsersSlice);
   const dispatch = useDispatch();
 
    const handleChange = (event) => {
