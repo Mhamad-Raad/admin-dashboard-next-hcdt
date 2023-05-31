@@ -2,6 +2,7 @@
 
 import UserItem from './UsersItem';
 import Loading from '../Loading/Loading';
+import Toast from '../Toast/Toast';
 
 import css from './UsersList.module.css';
 
@@ -23,7 +24,7 @@ export default function UsersList() {
     <table className={css.users_table}>
       <thead>
         <tr>
-          <th></th>
+          <th><Toast /></th>
           <th>ID</th>
           <th>Avatar</th>
           <th>Email</th>
