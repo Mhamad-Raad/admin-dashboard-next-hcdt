@@ -1,0 +1,47 @@
+.details {
+  width: 100%;
+  height: calc(100vh - 81px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details_img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 29.75px;
+}
+
+.details_name {
+  font-size: 36px;
+  line-height: 44px; 
+  margin-bottom:10.77px;
+}
+
+.details_email {
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 52.24px;
+}
+
+.details_back_button {
+  background: #EEF1F4;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px 12px 16px;
+}
+
+.details_back_button > p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.details_back_button > svg {
+  width: 44px;
+  height: 22px;
+}

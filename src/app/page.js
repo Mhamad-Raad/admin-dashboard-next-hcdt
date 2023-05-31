@@ -21,7 +21,7 @@ export default function Home() {
       <HomeHeader />
       {(error && !isLoading) && <div>failed to load</div>}
       {isLoading && <Loading />}
-      {(!isLoading && !error) && <UsersList usersData={data.data} />}
+      {(!isLoading && !error) && <UsersList usersData={data?.data} />}
     </div>
   );
 }

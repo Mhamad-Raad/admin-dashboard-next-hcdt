@@ -16,8 +16,6 @@ export default function Navbar() {
     setDarkMode(checked);
   };
 
-  console.log(userSlice);
-
   return (
     <nav>
       <Flex
@@ -35,7 +33,7 @@ export default function Navbar() {
           size={40}
         />
         {userSlice.length > 0 && (
-          <Link href="/posts/first-post">
+          <Link href={`${userSlice[0].id}`}>
             <Flex justify='flex-start' align='center'>
               <img
                 src={userSlice[0].avatar}

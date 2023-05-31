@@ -28,8 +28,6 @@ export default function UsersList({usersData}) {
         })
   }
 
-  console.log(users)
-
   return (
     <table className={css.users_table}>
       <thead>
@@ -44,7 +42,7 @@ export default function UsersList({usersData}) {
         </tr>
       </thead>
       <tbody>
-        {users.map((user) => (
+        {users?.map((user) => (
           <UserItem user={user} key={user.id} onDelete={deleteUser} />
         ))}
       </tbody>
