@@ -1,7 +1,7 @@
-'use client';
-import { useEffect } from 'react';
-import useSWR from 'swr';
+'use client';import useSWR from 'swr';
+
 import UserItem from './UsersItem';
+import Loading from '../Loading/Loading';
 
 import css from './UsersList.module.css';
 
@@ -14,7 +14,7 @@ export default function UsersList() {
   );
 
   if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <Loading />;
 
   console.log(data);
   const { data: users } = data;
