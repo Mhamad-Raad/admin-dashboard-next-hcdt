@@ -12,10 +12,22 @@ export default function UsersItem({ user, onDelete }) {
 
   console.log(userSlice);
 
+   const handleChange = (event) => {
+     if (event.target.checked) {
+        dispatch(addUser(user));
+      } else {
+        dispatch(deleteUser(user.id));
+      }
+    }
+
   return (
     <tr>
       <td>
-        <input type='checkbox' className={css.table_checkbox} />
+        <input
+          type='checkbox'
+          className={css.table_checkbox}
+          onChange={handleChange}
+        />
       </td>
       <td>{user.id}</td>
       <td className={css.table_img_data}>

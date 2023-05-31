@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = [{
-  name: 'works'
-}];
+const initialState = [
+  {
+    name: 'works',
+  },
+];
 
 export const UsersSlice = createSlice({
   name: 'usersSlice',
@@ -12,9 +14,10 @@ export const UsersSlice = createSlice({
       state.push(action.payload);
     },
     deleteUser: (state, action) => {
-      const tempArr = state;
-      const newArr = tempArr.filter((user) => user.id !== action.payload);
-      state = newArr;
+      console.log(action.payload);
+      console.log('here');
+      const index = state.findIndex((user) => user.id === action.payload);
+      state.splice(index, 1);
     },
   },
 });
