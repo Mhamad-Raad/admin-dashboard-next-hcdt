@@ -7,27 +7,3 @@
   font-size: 16px;
   line-height: 19px;
 }
-
-.header_button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 24px 12px 16px;
-  gap: 10px;
-  width: 126px;
-  height: 48px;
-  background: #667080;
-  border-radius: 6px;
-  color: white;
-}
-
-.header_button_plus {
-  font-size: 32px !important;
-  margin-top: -5px;
-}
-
-.header_button > span {
-  font-size: 16px;
-  line-height: 22px;
-  letter-spacing: -0.02em;
-}
