@@ -1,21 +1,33 @@
 import css from './UsersItem.module.css';
 import { AiFillDelete, AiFillEye } from 'react-icons/ai';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser, deleteUser } from '../../store/UserSlice';
 import { LuEdit } from 'react-icons/lu';
 
 export default function UsersItem({ user, onDelete }) {
   const deleteHandler = () => onDelete(user.id);
 
+  const userSlice = useSelector((state) => state.UsersSlice);
   const dispatch = useDispatch();
 
-   const handleChange = (event) => {
-     if (event.target.checked) {
-        dispatch(addUser(user));
-      } else {
-        dispatch(deleteUser(user.id));
-      }
+  const handleChange = (event) => {
+    if (event.target.checked) {
+      dispatch(addUser(user));
+    } else {
+      dispatch(deleteUser(user.id));
     }
+  };
+
+  let checked = false;
+
+  for (let i = 0; i < userSlice.length; i++) {
+    if (user.id === userSlice[i].id) {
+      checked = true;
+      break;
+    }
+  }
+
+  console.log(checked);
 
   return (
     <tr>
@@ -24,6 +36,7 @@ export default function UsersItem({ user, onDelete }) {
           type='checkbox'
           className={css.table_checkbox}
           onChange={handleChange}
+          checked={checked}
         />
       </td>
       <td>{user.id}</td>
