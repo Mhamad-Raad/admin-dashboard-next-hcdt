@@ -15,7 +15,7 @@ export default function UsersList({usersData}) {
     const tempUsers = users;
     const newUsers = tempUsers.filter((user)=>user.id !== id );
     setUsers(newUsers);
-    // fake deletion because this link does not do anyhting to the 
+    // fake deletion because this link does not do anyhting to the datas
     fetch ('https://reqres.in/api/users/' + id.toString(), {
       method: "DELETE",
     });
