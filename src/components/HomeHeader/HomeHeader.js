@@ -12,8 +12,8 @@ export default function HomeHeader() {
         <h2 className={css.home_title}>Users List</h2>
         <p className={css.home_description}>Create, Update, Delete Users</p>
       </div>
-            <Modal />
-
+      
+      <Modal />
     </Flex>
   );
 }
