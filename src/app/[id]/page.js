@@ -11,6 +11,11 @@ import Loading from '../../components/Loading/Loading.js';
 
 import css from './details.module.css';
 
+export const metadata = {
+  title: 'HC user',
+  description: 'something to make more popular',
+};
+
 export default function Details() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 

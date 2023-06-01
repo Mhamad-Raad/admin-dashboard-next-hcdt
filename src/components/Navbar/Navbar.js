@@ -3,12 +3,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
-import { Flex } from '@chakra-ui/react';
+import { Flex, useColorMode } from '@chakra-ui/react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 import css from './Navbar.module.css';
 
 export default function Navbar() {
+  const { toggleColorMode } = useColorMode();
   const [isDarkMode, setDarkMode] = useState(false);
   const userSlice = useSelector((state) => state.UsersSlice);
 
@@ -27,11 +28,14 @@ export default function Navbar() {
         paddingLeft='95.26px'
         paddingRight='128.97px'
       >
-        <DarkModeSwitch
+        {/* <DarkModeSwitch
           checked={isDarkMode}
-          onChange={toggleDarkMode}
+          onChange={toggleColorMode}
           size={40}
-        />
+        /> */}
+        <button onClick={toggleColorMode}>
+          haha
+          </button>
         {userSlice.length > 0 && (
           <Link href={`${userSlice[0].id}`}>
             <Flex justify='flex-start' align='center'>
