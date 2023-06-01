@@ -12,7 +12,7 @@ import css from './details.module.css';
 
 export default function Details() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
+  const router = useRouter();
   const pathname = usePathname();
   const index = +pathname.replace('/', '');
   
@@ -30,7 +30,6 @@ export default function Details() {
   
   if (userSlice.length <= 0) dispatch(addUser(data.data));
   
-  const router = useRouter();
   const navigateBack = () => {
     router.back()
   }
@@ -41,6 +40,7 @@ export default function Details() {
         src={data.data.avatar}
         alt='user avatar'
         className={css.details_img}
+        title={`${data.data.first_name}'s avatar`}
       />
       <h2
         className={css.details_name}

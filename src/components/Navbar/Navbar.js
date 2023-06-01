@@ -33,7 +33,7 @@ export default function Navbar() {
           size={40}
         />
         {userSlice.length > 0 && (
-          <Link href={`${userSlice[0].id}`}>
+          <Link href={`${userSlice[0].id}`} title={`visit ${userSlice[0].first_name}'s profile`}>
             <Flex justify='flex-start' align='center'>
               <img
                 src={userSlice[0].avatar}
