@@ -16,6 +16,7 @@ export default function Home({id}) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
+
   let search ='';
   if(searchParams.get('page') !== null) {
     search = +searchParams.get('page');
