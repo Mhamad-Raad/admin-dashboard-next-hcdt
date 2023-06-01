@@ -50,7 +50,6 @@ export default function InitialFocus() {
       }),
     }).then((res) => res.json());
 
-    console.log(response)
   };
 
   return (
