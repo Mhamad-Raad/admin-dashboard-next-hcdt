@@ -37,8 +37,6 @@ export default function Home({id}) {
     router.push(`${pathname}?${params}`);
   };
 
-  console.log(data?.data)
-
   return (
     <div className={css.home}>
       <HomeHeader />

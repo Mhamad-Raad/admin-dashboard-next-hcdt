@@ -11,11 +11,7 @@ import '../styles/globals.css';
 
 import Navbar from '../components/Navbar/Navbar';
 
-export const metadata = {
-  title: 'HC',
-  description: 'something to make more popular',
-};
-
+//not using meta data to becuase most of the things are happenign on the client side, which makes it unnecessary
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
