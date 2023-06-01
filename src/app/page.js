@@ -3,7 +3,6 @@ import useSWR from 'swr';
 import ReactPaginate from 'react-paginate';
 import { Flex } from '@chakra-ui/react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
-import {useState, useEffect} from 'react'
 
 import HomeHeader from '../components/HomeHeader/HomeHeader';
 import UsersList from '../components/UsersList/UsersList';
@@ -21,16 +20,6 @@ export default function Home({id}) {
   if(searchParams.get('page') !== null) {
     search = +searchParams.get('page');
   }
-  console.log(search)
-
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-  setCount(count+1);
-  console.log(count)
-}, [search]);
-
-  console.log('reload')
 
   let URL = 'https://reqres.in/api/users'
 
@@ -56,7 +45,7 @@ export default function Home({id}) {
       {isLoading && <Loading />}
       {!isLoading && !error && (
         <>
-          <UsersList usersData={data?.data} key={count} />
+          <UsersList usersData={data?.data} key={search} />
           <Flex w='100%' justify='flex-end' align='center'>
             <ReactPaginate
               className={css.pagination}
