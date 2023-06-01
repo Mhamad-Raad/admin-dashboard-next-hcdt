@@ -39,8 +39,13 @@ export default function InitialFocus() {
     const name = `${firstNameRef.current.value} ${lastNameRef.current.value}`;
     const email = emailRef.current.value;
 
+    if (firstNameRef.current.value === '' || lastNameRef.current.value === '' || email === '') {
+      setFetchState({ ...fetchState, error: true, loading: false });
+      return;
+    }
+
     // this is also fake becuase the api does not do anything
-    const response = await fetch('https://reqresf.in/api/users', {
+    await fetch('https://reqres.in/api/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,14 +56,15 @@ export default function InitialFocus() {
       }),
     })
       .then((res) => res.json())
-      .then(() => {
+      .then((data) => {
         setFetchState({
           loading: false,
           error: false,
-          response: response,
+          response: data,
         });
       })
-      .catch(() => {
+      .catch((e) => {
+        console.log(e);
         console.log('error');
         setFetchState({ ...fetchState, error: true, loading: false });
         return;
