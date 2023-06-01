@@ -27,8 +27,6 @@ export default function UsersItem({ user, onDelete }) {
     }
   }
 
-  console.log(checked);
-
   return (
     <tr>
       <td>

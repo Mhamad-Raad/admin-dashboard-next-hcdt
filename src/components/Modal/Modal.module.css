@@ -33,4 +33,14 @@
   border-radius: 6px;
   padding: 12px 24px 12px 16px;
   color: white;
+  margin-bottom: 43.63px;
+}
+
+.modal_footer {
+  flex-direction: column;
+}
+
+.status > p {
+  text-align: center;
+  font-size: 14px;
 }
