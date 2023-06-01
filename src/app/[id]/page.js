@@ -1,6 +1,6 @@
 'use client';
 import useSWR from 'swr';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { BiArrowBack } from 'react-icons/bi';
 
@@ -29,8 +29,12 @@ export default function Details() {
   if (isLoading) return <Loading />;
 
   
-
   if (userSlice.length <= 0) dispatch(addUser(data.data));
+  
+  const router = useRouter();
+  const navigateBack = () => {
+    router.back()
+  }
 
   return (
     <div className={css.details}>
@@ -43,10 +47,10 @@ export default function Details() {
         className={css.details_name}
       >{`${data.data.first_name} ${data.data.last_name}`}</h2>
       <p className={css.details_email}>{data.data.email}</p>
-      <Link href='..' className={css.details_back_button}>
+      <button onClick={navigateBack} className={css.details_back_button}>
         <BiArrowBack />
         <p>Back To Users List</p>
-      </Link>
+      </button>
     </div>
   );
 }

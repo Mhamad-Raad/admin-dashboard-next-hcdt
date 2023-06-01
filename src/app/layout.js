@@ -8,6 +8,7 @@ import { Providers } from './providers';
 import { Provider } from 'react-redux';
 import { store } from '../store/store';
 
+
 import Navbar from '../components/Navbar/Navbar';
 
 export const metadata = {
