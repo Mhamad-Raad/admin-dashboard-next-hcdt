@@ -25,8 +25,6 @@ export default function Home({id}) {
 
   if(search !== null && !isNaN(search)) URL += `?page=${search}`; 
 
-  console.log(URL)
-
   const { data, error, isLoading } = useSWR(
     URL,
     fetcher
@@ -37,7 +35,7 @@ export default function Home({id}) {
     params.set('page', event.selected + 1);
     router.replace(`${pathname}?${params}`);
   };
-console.log(data)
+
   return (
     <div className={css.home}>
       <HomeHeader />
