@@ -53,6 +53,7 @@ export default function Home({id}) {
             pageCount={data.total_pages}
             previousLabel='<'
             renderOnZeroPageCount={null}
+            activeLinkClassName={css.pagination_active_link}
           />
         </Flex>
      </>}
