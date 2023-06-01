@@ -5,6 +5,8 @@ import UsersList from '../components/UsersList/UsersList';
 import Loading from '../components/Loading/Loading.js';
 
 import useSWR from 'swr';
+import ReactPaginate from 'react-paginate';
+import { Flex } from '@chakra-ui/react';
 
 import css from '../styles/page.module.css';
 
@@ -16,12 +18,30 @@ export default function Home() {
     fetcher
   );
 
+  const handlePageClick = (event) => {
+    console.log(
+      `User requested page number ${event.selected}`
+    );
+  };
+
   return (
     <div className={css.home}>
       <HomeHeader />
-      {(error && !isLoading) && <div>failed to load</div>}
+      {error && !isLoading && <div>failed to load</div>}
       {isLoading && <Loading />}
-      {(!isLoading && !error) && <UsersList usersData={data?.data} />}
+      {!isLoading && !error && <UsersList usersData={data?.data} />}
+      <Flex w='100%' justify='flex-end' align='center'>
+        <ReactPaginate
+          className={css.pagination}
+          breakLabel='...'
+          nextLabel='>'
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={2}
+          previousLabel='<'
+          renderOnZeroPageCount={null}
+        />
+      </Flex>
     </div>
   );
 }

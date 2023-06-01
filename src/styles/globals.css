@@ -8,3 +8,7 @@ body,
 button, a, input, textarea {
   cursor: pointer;
 }
+
+ul {
+  list-style-type: none;
+}
